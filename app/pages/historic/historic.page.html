@@ -1,0 +1,37 @@
+<ion-header color="secondary">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Historico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let app of list">
+    <ion-item-sliding  >
+      <ion-item>
+        <ion-avatar>
+          <img [src]="app?.appIcon">
+        </ion-avatar>
+        <ion-label>
+          {{app.appName}}
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="end" >
+        <ion-item-option color="danger" (click)="removeItem(app)">
+          <ion-icon slot="top" name="trash"></ion-icon>
+          Excluir
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="listagem()" expand="block" fill="clear" shape="round">
+      Carregar Historico
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
+

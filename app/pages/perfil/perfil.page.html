@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="Alert()">
+        <ion-icon  name="power-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-no-border" color="secondary">
+  
+  <div class="ocean">
+    <div class="waves"></div>
+
+    <div class="container bottom ion-text-center">
+    </div>
+  </div>
+
+    <ion-card>
+      <ion-list ngFor="let user of users">
+      <ion-avatar>
+        <img src='../../../assets/icon/user.svg' />
+      </ion-avatar>
+      <ion-item class="ion-margin-top" lines="full">
+        <ion-icon slot="start" name="person"></ion-icon>
+        <p>{{user.nome}}</p>
+      </ion-item>
+      <ion-item class="ion-margin-top" lines="full">
+        <ion-icon slot="start" name="calendar"></ion-icon>
+        <p>{{user.dataNasc}}</p>
+      </ion-item>
+      <ion-item class="ion-margin-top" lines="full">
+        <ion-icon slot="start" name="call"></ion-icon>
+        <p>{{user.telefone}}</p>
+      </ion-item>
+      <ion-button (click)="update()" [routerLink]="['/edit', user.id]" color="success" expand="block">
+        <ion-icon slot="start" name="pencil"></ion-icon>
+        Editar
+      </ion-button>
+    </ion-list>
+   
+    </ion-card>   
+</ion-content>
+<!-- <ion-footer class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-button [routerLink]="['/edit', user.id]" color="success" expand="block">
+      <ion-icon slot="start" name="pencil"></ion-icon>
+      Editar
+    </ion-button>
+  </ion-toolbar>
+   
+ </ion-footer> -->

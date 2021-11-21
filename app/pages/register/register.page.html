@@ -1,0 +1,55 @@
+  <ion-content>
+    <ion-slides>
+      <ion-slide>
+        <div class="slide-inner ion-padding bg-class">
+          <span>Cadastro</span>
+  
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-icon slot="start" name="mail"></ion-icon>
+            <ion-input type="email" placeholder="Seu E-mail" [(ngModel)]="user.email"></ion-input>
+          </ion-item>
+      
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-icon slot="start" name="key"></ion-icon>
+            <ion-input [type]="tipo ? 'text' : 'password'" placeholder="Sua senha" [(ngModel)]="user.password"></ion-input>
+            <ion-buttons slot="end">
+              <ion-button (click)="exibirOcultar()">
+                <ion-icon [name]="tipo? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+          </ion-item>
+      
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-input type="text" placeholder="Seu nome" [(ngModel)]="user.nome"></ion-input>
+          </ion-item>
+      
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-icon slot="start" name="calendar"></ion-icon>
+            <ion-input type="date" placeholder="Data de nascimento" [(ngModel)]="user.dataNasc"></ion-input>
+          </ion-item>
+
+          <ion-item class="ion-margin-top" lines="none">
+            <ion-icon slot="start" name="call-outline"></ion-icon>
+            <ion-input type="number" placeholder="Seu telefone" [(ngModel)]="user.telefone" mask="(000) 000-0000"></ion-input>
+          </ion-item>
+          
+          <ion-button class="ion-margin-top" (click)="register()" color="tertiary" expand="block">
+            Cadastrar
+          </ion-button>
+          ou
+          <ion-button class="ion-margin-top" [routerLink]="['/login']" color="tertiary" expand="block">
+            Efetuar Login
+          </ion-button>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  
+    <div class="ocean">
+      <div class="waves"></div>
+  
+      <div class="container bottom ion-text-center">
+      </div>
+    </div>
+  </ion-content>
+

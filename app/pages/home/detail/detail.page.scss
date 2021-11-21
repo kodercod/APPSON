@@ -1,0 +1,22 @@
+ion-thumbnail img {
+    border: solid rgba($color: #cccccc, $alpha: 1) 0.5px;
+}
+
+.ocean {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-image: linear-gradient(197deg, rgb(36, 120, 168) 0%, rgb(22, 98, 199) 13.5%, rgb(13, 110, 134) 33.33%, rgb(3, 64, 75) 100%) !important;
+  
+    .waves {
+        position: absolute;
+        top: 200px;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background-size: contain;
+        transition: all 0.50s;
+    }
+  }

@@ -1,0 +1,47 @@
+<ion-header >
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="update()">
+        <ion-icon  name="pencil-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Editar Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary">
+  <div class="ocean">
+    <div class="waves"></div>
+
+    <div class="container bottom ion-text-center">
+    </div>
+  </div>
+  <ion-card>
+    <ion-item class="ion-margin-top" lines="full">
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <ion-input type="text" placeholder="Nome" [(ngModel)]="user.nome"></ion-input>
+    </ion-item>
+
+    <ion-item class="ion-margin-top" lines="full">
+      <ion-icon slot="start" name="calendar-outline"></ion-icon>
+      <ion-input type="date" placeholder="Data de nascimento" [(ngModel)]="user.dataNasc"></ion-input>
+    </ion-item>
+    <ion-item class="ion-margin-top" lines="full">
+      <ion-icon slot="start" name="call-outline"></ion-icon>
+      <ion-input type="number" [(ngModel)]="user.telefone"></ion-input>
+    </ion-item>
+    
+  </ion-card>  
+</ion-content >
+<ion-footer class="ion-no-border">
+ <ion-toolbar color="primary">
+   <ion-button class="ion-margin-top" (click)="update()" color="success" expand="block">
+     <ion-icon slot="start" name="save-outline"></ion-icon>
+    Atualizar
+  </ion-button>
+ </ion-toolbar>
+  
+</ion-footer>

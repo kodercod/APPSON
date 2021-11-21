@@ -1,0 +1,78 @@
+<!-- Cabeçalho da pagina com a barra de pesquisa-->
+
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary" >
+    <ion-title>
+      Apps List
+    </ion-title>
+  </ion-toolbar>
+  <!-- Barra de pequisa com autocomplete -->
+  <ion-toolbar color="secondary">
+    <ion-searchbar autocomplete="on" (ionInput)="onSearch($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<!-- Aplicações listadas -->
+<ion-content color="primary" class="ion-no-border">
+  <div class="ocean">
+    <div class="waves"></div>
+
+    <div class="container bottom ion-text-center">
+    </div>
+  </div>
+  <ion-card>
+    <section>
+      <ion-list lines="full" >
+        <ion-item *ngFor="let app of applist; let i= index;" mode="md" [ngClass]="{'ion-hide':app?.show === false}">
+          <ion-avatar item-start>
+            <img [src]="app.appIcon" [alt]="app?.appName">
+          </ion-avatar>
+          <ion-label class="ion-margin-start">
+            <h2>{{app?.appName}}</h2>
+          </ion-label>
+          
+            <ion-checkbox [(ngModel)]="app.checked" ></ion-checkbox>
+          
+        </ion-item>
+        <ng-container *ngIf="applist === null">
+          <ion-item>
+            <ion-label>
+              <h2>Loading</h2>
+            </ion-label>
+          </ion-item>
+        </ng-container>
+        <ng-container *ngIf="!listHasSearch()">
+          <ion-item>
+            <ion-label>
+              <h2>Nothing found</h2>
+            </ion-label>
+          </ion-item>
+        </ng-container>
+        <ng-container *ngIf="applist === undefined">
+          <ion-item>
+            <ion-label>
+              <h2>Not possible to load the apps</h2>
+            </ion-label>
+          </ion-item>
+        </ng-container>
+      </ion-list>
+    </section>
+  </ion-card>
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button (click)="cancelar()" color="danger" expand="block">
+            Cancelar
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button (click)="appEscolhido()" color="success" expand="block">
+            Adicionar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

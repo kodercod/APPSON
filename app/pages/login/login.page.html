@@ -1,0 +1,39 @@
+<ion-content>
+  <div class="container top img">
+    <img src="/assets/img/logo.png">
+  </div>
+  <ion-slides>
+    <ion-slide>
+      <div class="slide-inner ion-padding bg-class">
+        <span>Login</span>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-icon slot="start" name="mail"></ion-icon>
+          <ion-input icon type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-icon slot="start" name="key"></ion-icon>
+          <ion-input icon [type]="tipo ? 'text' : 'password'" placeholder="Senha" [(ngModel)]="userLogin.password">
+          </ion-input>
+          <ion-buttons slot="end">
+            <ion-button (click)="exibirOcultar()">
+              <ion-icon [name]="tipo? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+        <ion-button class="ion-margin-top" (click)="login()" color="tertiary" expand="block">
+          Entrar
+        </ion-button>
+        ou
+        <ion-button [routerLink]="['/register']" color="tertiary" expand="block">
+          Cadastrar-se
+        </ion-button>
+
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="ocean">
+  </div>
+</ion-content>

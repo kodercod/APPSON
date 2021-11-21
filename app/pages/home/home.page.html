@@ -1,0 +1,54 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="secondary">
+    <ion-title> Aplicativos </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="lockUnlock()">
+        <ion-icon [name]="tipo? 'lock-closed-outline' : 'lock-open-outline'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ocean" fullscreen class="ion-padding">
+  <div class="ocean">
+    <div class="waves"></div>
+
+    <div class="container bottom ion-text-center">
+    </div>
+  </div>
+  <ion-list *ngFor="let app of apps, let i = index">
+    <ion-item (click)="goDetail(app)" *ngIf="app.checked == true" detail>
+      <ion-avatar slot="start">
+        <img [src]="app.appIcon" [alt]="app.appName">
+      </ion-avatar>
+      <ion-label>
+        <span>{{app.appName}}</span>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed" *ngIf="!tipo">
+    <ion-fab-button color="secondary" (click)="abrirModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-footer class="ion-no-border" *ngIf="!tipo">
+  <ion-toolbar color="primary">
+    <ion-slides [options]="slideOptions">
+      <ion-slide>
+        <div [routerLink]="['/perfil']" class="container ion-text-left">
+          <ion-icon name="person-outline"></ion-icon>
+          <span>Perfil</span>
+        </div>
+        <div class="container ion-text-left">
+          <ion-icon name="help-outline"></ion-icon>
+          <span>Ajuda</span>
+        </div>
+        <div class="container ion-text-left" (click)="Alert()">
+          <ion-icon name="exit-outline"></ion-icon>
+          <span>Sair</span>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </ion-toolbar>
+</ion-footer>

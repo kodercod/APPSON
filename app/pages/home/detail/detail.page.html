@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{utilsService?.app?.appName}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="openApp(utilsService.app.packageName)">
+        <ion-icon slot="icon-only" name="play"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="ocean">
+    <div class="waves"></div>
+
+    <div class="container bottom ion-text-center">
+    </div>
+  </div>
+  <ion-item (click)="openApp(utilsService.app.packageName)">
+    <ion-thumbnail>
+      <img [src]="utilsService?.app?.appIcon" alt="">
+    </ion-thumbnail>
+    <ion-label class="ion-margin-start">
+      <h2>
+        {{utilsService?.app?.appName}}
+      </h2>
+    </ion-label>
+  </ion-item>
+</ion-content>

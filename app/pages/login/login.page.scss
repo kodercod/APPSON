@@ -1,0 +1,73 @@
+.container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 75%;
+    margin: 0 auto;
+    z-index: 2;
+
+    &.top {
+        top: 5%;
+    }
+
+    &.bottom {
+        bottom: 20%;
+
+        span {
+            color: #fff;
+        }
+    }
+}
+
+ion-slides {
+    height: 100%;
+
+    .slide-inner {
+        width: 75%;
+        color: #fff;
+        background-color: #0072bc;
+        border-radius: 10px;
+        ion-item {
+            --background: rgba(255, 255, 255, 0.2);
+            --border-radius: 30px;
+
+            ion-input {
+                --color: #fff;
+            }
+        }
+    }
+}
+
+.ocean {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-image: linear-gradient(197deg, rgb(36, 120, 168) 0%, rgb(22, 98, 199) 13.5%, rgb(13, 110, 134) 33.33%, rgb(3, 64, 75) 100%) !important;
+
+    .waves {
+        position: absolute;
+        top: 200px;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background-size: contain;
+        transition: all 0.50s;
+    }
+}
+
+.bg-class{
+    background-image: linear-gradient(197deg, rgb(30, 90, 146) 0%, rgb(13, 89, 189) 13.5%, rgb(11, 94, 133) 33.33%, rgb(17, 132, 185) 100%) !important
+}
+ion-button{
+    --border-radius: 30px;
+}
+
+img{
+    max-width:200px;
+    max-height:120px;
+    width: auto;
+    height: auto;
+    margin: auto;
+}

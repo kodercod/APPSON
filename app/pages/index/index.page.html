@@ -1,0 +1,57 @@
+<ion-header translucent>
+  <ion-toolbar color="primary">
+
+    <ion-title>
+      Filhos
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>  
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>Filhos</ion-card-subtitle>
+  </ion-card-header>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item [routerLink]="['/home', item.id]" >
+          <ion-avatar slot="start">
+            <img src="./../../../assets/icon/user.svg">
+          </ion-avatar>
+          <ion-label>{{item.name}}</ion-label>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color="danger" (click)="deleteItem()">
+        <ion-icon slot="top" name="trash"></ion-icon>
+        Excluir
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+  </ion-list>
+  <ion-button (click)="pegarid()" color="secondary" expand="block">
+    Adicionar filho
+    <ion-icon name="add-circle" slot="start"></ion-icon>
+  </ion-button>
+</ion-card>
+<ion-fab horizontal="center" vertical="bottom" slot="fixed">
+  <ion-fab-button color="secondary" *ngIf="!tipo">
+    <ion-icon name="ellipsis-horizontal"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="top">
+    <ion-fab-button color="light" [routerLink]="['/perfil']">
+      <ion-icon name="person"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+  <ion-fab-list side="end">
+    <ion-fab-button color="light" (click)="Alert()">
+      <ion-icon name="exit"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+  <ion-fab-list side="start">
+    <ion-fab-button color="light">
+      <ion-icon name="help-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+</ion-content>
